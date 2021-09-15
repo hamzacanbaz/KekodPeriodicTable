@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <import type="android.view.View" />
+
+        <variable
+            name="elementInfo"
+            type="com.canbazdev.kekodperiodictable.Element" />
+    </data>
+
+    <FrameLayout
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="0.5dp"
+        android:orientation="vertical"
+        backgroundColor="@{elementInfo.classification}"
+        android:visibility="@{elementInfo.isVisible() ? View.VISIBLE : View.INVISIBLE}">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:text="@{Integer.toString(elementInfo.number)}"
+            android:textSize="12sp"
+            android:layout_marginStart="2dp"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@{elementInfo.shortName}"
+            android:textSize="30sp" />
+    </FrameLayout>
+</layout>
