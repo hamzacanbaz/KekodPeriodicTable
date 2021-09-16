@@ -1,4 +1,4 @@
-package com.canbazdev.kekodperiodictable
+package com.canbazdev.kekodperiodictable.model
 
 import android.graphics.drawable.Drawable
 

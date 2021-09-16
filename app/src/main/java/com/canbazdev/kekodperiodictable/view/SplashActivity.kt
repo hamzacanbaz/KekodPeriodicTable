@@ -1,11 +1,11 @@
-package com.canbazdev.kekodperiodictable
+package com.canbazdev.kekodperiodictable.view
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
-import android.view.animation.AnimationUtils
 import androidx.databinding.DataBindingUtil
+import com.canbazdev.kekodperiodictable.R
 import com.canbazdev.kekodperiodictable.databinding.ActivitySplashBinding
 
 class SplashActivity : AppCompatActivity() {
@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
             override fun onFinish() {
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)
-                overridePendingTransition(R.anim.alpha,R.anim.alpha)
+//                overridePendingTransition(R.anim.alpha, R.anim.alpha)
                 finish()
 
             }

@@ -7,7 +7,7 @@
 
         <variable
             name="elementInfo"
-            type="com.canbazdev.kekodperiodictable.Element" />
+            type="com.canbazdev.kekodperiodictable.model.Element" />
     </data>
 
     <FrameLayout

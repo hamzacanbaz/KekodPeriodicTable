@@ -3,9 +3,12 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/activity_main.xml" value="0.152" />
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/activity_splash.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/card_slide.xml" value="0.15625" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/element_detail_dialog.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/element_detail_dialogbackup.xml" value="0.23645833333333333" />
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/fragment_first.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/row_item_element.xml" value="0.23645833333333333" />
       </map>
     </option>

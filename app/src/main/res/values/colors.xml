@@ -9,4 +9,11 @@
     <color name="white">#FFFFFFFF</color>
     <color name="statusbar">#d075ff</color>
     <color name="alkaliMetal">#d075ff</color>
+    <color name="element_color_2">#90CAF9</color>
+    <color name="element_color_3">#CE93D8</color>
+    <color name="element_color_4">#FFAB91</color>
+    <color name="element_color_5">#DCE775</color>
+    <color name="element_color_6">#7986CB</color>
+    <color name="element_color_7">#F06292</color>
+    <color name="element_color_8">#F6E17B</color>
 </resources>

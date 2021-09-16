@@ -1,12 +1,11 @@
-package com.canbazdev.kekodperiodictable
+package com.canbazdev.kekodperiodictable.adapter
 
-import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat
 import androidx.recyclerview.widget.RecyclerView
 import com.canbazdev.kekodperiodictable.databinding.RowItemElementBinding
+import com.canbazdev.kekodperiodictable.model.Element
 
 class ElementAdapter(
     val elementList: List<Element>,
@@ -27,8 +26,6 @@ class ElementAdapter(
 
         fun bind(element: Element) {
             binding.elementInfo = element
-
-
         }
 
         override fun onClick(p0: View?) {
@@ -46,11 +43,6 @@ class ElementAdapter(
     }
 
     override fun onBindViewHolder(holder: ElementViewHolder, position: Int) {
-
-        if (position==0){
-            holder.itemView.setBackgroundColor(ContextCompat.getColor(holder.itemView.context,android.R.color.holo_blue_light))
-        }
-
 
         holder.bind(elementList[position])
         holder.itemView.visibility = View.INVISIBLE;
