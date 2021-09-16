@@ -1,39 +1,87 @@
-package com.canbazdev.kekodperiodictable
+package com.canbazdev.kekodperiodictable.view
 
 import android.app.AlertDialog
+import android.app.NotificationChannel
+import android.app.NotificationManager
+import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.TextView
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.NotificationCompat
+import androidx.core.app.NotificationManagerCompat
+import androidx.core.content.ContextCompat.getSystemService
 import androidx.databinding.DataBindingUtil
+import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
-import com.canbazdev.kekodperiodictable.databinding.ActivityMainBinding
+import com.canbazdev.kekodperiodictable.R
+import com.canbazdev.kekodperiodictable.adapter.ElementAdapter
+import com.canbazdev.kekodperiodictable.databinding.FragmentFirstBinding
+import com.canbazdev.kekodperiodictable.model.Element
+import com.canbazdev.kekodperiodictable.util.ElementTypes
+import kotlin.math.roundToInt
+import kotlin.random.Random
 
-class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
 
-    private var _binding: ActivityMainBinding? = null
+class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
+    private var _binding: FragmentFirstBinding? = null
     private val binding get() = _binding!!
 
-    private lateinit var mAlertDialog: AlertDialog
+    private val channel_id = "channel_id_01"
+    private val notification_id = 101
 
-    enum class ElementTypes {
-        AlkaliMetals,
-        AlkalineEarthMetals,
-        Lanthanides,
-        Actinides,
-        TransitionMetals,
-        OtherMetals,
-        Metalloids,
-        OtherNonMetals,
-        Halogens,
-        NobleGases
+    var elementList: ArrayList<Element> = arrayListOf()
+
+    private fun createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            val name = "Notification Title"
+            val descriptionText = "Today's element is: Bor"
+            val importance = NotificationManager.IMPORTANCE_DEFAULT
+            val channel = NotificationChannel(channel_id, name, importance).apply {
+                description = descriptionText
+            }
+            val notificationManager: NotificationManager =
+                getSystemService(
+                    requireContext(),
+                    NotificationManager::class.java
+                ) as NotificationManager
+            notificationManager.createNotificationChannel(channel)
+        }
     }
+
+    private fun sendNotification() {
+        val builder = NotificationCompat.Builder(requireContext(), channel_id)
+            .setSmallIcon(R.drawable.ic_launcher_foreground)
+            .setContentTitle("Periodic Table")
+            .setContentText("Se-lam-lar Kekod, günün elementi için uygulamayı ziyaret etmeyi unutma!")
+            .setPriority(NotificationCompat.PRIORITY_DEFAULT)
+
+        with(NotificationManagerCompat.from(requireContext())) {
+            notify(notification_id, builder.build())
+        }
+    }
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        _binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
+        createNotificationChannel()
 
+    }
+
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
+        _binding =
+            DataBindingUtil.inflate(layoutInflater, R.layout.fragment_first, container, false)
+        return binding.root
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        sendNotification()
         val element1 = Element(
             shortName = "H",
             classification = ElementTypes.OtherNonMetals.ordinal,
@@ -120,8 +168,8 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element19 = Element(isVisible = false)
         val element20 = Element(isVisible = false)
         val element21 = Element(isVisible = false)
-        val element22 = Element(shortName = "Sc", name = "Scandium",number = 21)
-        val element23 = Element(shortName = "Y", name = "Yttrium",number = 39)
+        val element22 = Element(shortName = "Sc", name = "Scandium", number = 21)
+        val element23 = Element(shortName = "Y", name = "Yttrium", number = 39)
         val element24 = Element(
             shortName = "Lu",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -149,10 +197,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element28 = Element(isVisible = false)
         val element29 = Element(isVisible = false)
         val element30 = Element(isVisible = false)
-        val element31 = Element(shortName = "Ti", name = "Titanium",number = 22)
-        val element32 = Element(shortName = "Zr", name = "Zirconium",number = 40)
-        val element33 = Element(shortName = "Hf", name = "Hafnium",number = 72)
-        val element34 = Element(shortName = "Rf", name = "Rutherfordium",number = 104)
+        val element31 = Element(shortName = "Ti", name = "Titanium", number = 22)
+        val element32 = Element(shortName = "Zr", name = "Zirconium", number = 40)
+        val element33 = Element(shortName = "Hf", name = "Hafnium", number = 72)
+        val element34 = Element(shortName = "Rf", name = "Rutherfordium", number = 104)
         val element35 = Element(
             shortName = "Ce",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -168,10 +216,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element37 = Element(isVisible = false)
         val element38 = Element(isVisible = false)
         val element39 = Element(isVisible = false)
-        val element40 = Element(shortName = "V", name = "Thorium",number = 23)
-        val element41 = Element(shortName = "Nb", name = "Thorium",number = 41)
-        val element42 = Element(shortName = "Ta", name = "Thorium",number = 73)
-        val element43 = Element(shortName = "Db", name = "Thorium",number = 105)
+        val element40 = Element(shortName = "V", name = "Thorium", number = 23)
+        val element41 = Element(shortName = "Nb", name = "Thorium", number = 41)
+        val element42 = Element(shortName = "Ta", name = "Thorium", number = 73)
+        val element43 = Element(shortName = "Db", name = "Thorium", number = 105)
         val element44 = Element(
             shortName = "Pr",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -187,10 +235,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element46 = Element(isVisible = false)
         val element47 = Element(isVisible = false)
         val element48 = Element(isVisible = false)
-        val element49 = Element(shortName = "Cr", name = "Thorium",number = 24)
-        val element50 = Element(shortName = "Mo", name = "Thorium",number = 42)
-        val element51 = Element(shortName = "W", name = "Thorium",number = 74)
-        val element52 = Element(shortName = "Sg", name = "Thorium",number = 106)
+        val element49 = Element(shortName = "Cr", name = "Thorium", number = 24)
+        val element50 = Element(shortName = "Mo", name = "Thorium", number = 42)
+        val element51 = Element(shortName = "W", name = "Thorium", number = 74)
+        val element52 = Element(shortName = "Sg", name = "Thorium", number = 106)
         val element53 = Element(
             shortName = "Nd",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -206,10 +254,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element55 = Element(isVisible = false)
         val element56 = Element(isVisible = false)
         val element57 = Element(isVisible = false)
-        val element58 = Element(shortName = "Mn", name = "Thorium",number = 25)
-        val element59 = Element(shortName = "Tc", name = "Thorium",number = 43)
-        val element60 = Element(shortName = "Re", name = "Thorium",number = 75)
-        val element61 = Element(shortName = "Bh", name = "Thorium",number = 107)
+        val element58 = Element(shortName = "Mn", name = "Thorium", number = 25)
+        val element59 = Element(shortName = "Tc", name = "Thorium", number = 43)
+        val element60 = Element(shortName = "Re", name = "Thorium", number = 75)
+        val element61 = Element(shortName = "Bh", name = "Thorium", number = 107)
         val element62 = Element(
             shortName = "Pm",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -225,10 +273,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element64 = Element(isVisible = false)
         val element65 = Element(isVisible = false)
         val element66 = Element(isVisible = false)
-        val element67 = Element(shortName = "Fe", name = "Thorium",number = 26)
-        val element68 = Element(shortName = "Ru", name = "Thorium",number = 44)
-        val element69 = Element(shortName = "Os", name = "Thorium",number = 76)
-        val element70 = Element(shortName = "Hs", name = "Thorium",number = 108)
+        val element67 = Element(shortName = "Fe", name = "Thorium", number = 26)
+        val element68 = Element(shortName = "Ru", name = "Thorium", number = 44)
+        val element69 = Element(shortName = "Os", name = "Thorium", number = 76)
+        val element70 = Element(shortName = "Hs", name = "Thorium", number = 108)
         val element71 = Element(
             shortName = "Sm",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -244,10 +292,10 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element73 = Element(isVisible = false)
         val element74 = Element(isVisible = false)
         val element75 = Element(isVisible = false)
-        val element76 = Element(shortName = "Co", name = "Thorium",number = 27)
-        val element77 = Element(shortName = "Rh", name = "Thorium",number = 45)
-        val element78 = Element(shortName = "Ir", name = "Thorium",number = 77)
-        val element79 = Element(shortName = "Mt", name = "Thorium",number = 109)
+        val element76 = Element(shortName = "Co", name = "Thorium", number = 27)
+        val element77 = Element(shortName = "Rh", name = "Thorium", number = 45)
+        val element78 = Element(shortName = "Ir", name = "Thorium", number = 77)
+        val element79 = Element(shortName = "Mt", name = "Thorium", number = 109)
         val element80 = Element(
             shortName = "Eu",
             classification = ElementTypes.Lanthanides.ordinal,
@@ -547,7 +595,7 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
         val element162 = Element(isVisible = false)
 
 
-        var elementList =
+        elementList =
             arrayListOf(
                 element1,
                 element2,
@@ -715,24 +763,53 @@ class MainActivity : AppCompatActivity(), ElementAdapter.OnItemClickedListener {
             )
 
         val elementAdapter = ElementAdapter(elementList, this)
+//        binding.recyclerview.scheduleLayoutAnimation()
 
         binding.recyclerview.layoutManager =
-            GridLayoutManager(applicationContext, 9, GridLayoutManager.HORIZONTAL, false)
+            GridLayoutManager(context, 9, GridLayoutManager.HORIZONTAL, false)
         binding.adapter = elementAdapter
-
+//        binding.recyclerview.layoutAnimation =
+//            AnimationUtils.loadLayoutAnimation(requireContext(), R.anim.grid_anim)
 
     }
 
     override fun onItemClicked(position: Int, element: Element) {
-        Toast.makeText(this, "${element.shortName} clicked", Toast.LENGTH_LONG).show()
-
+        println(position)
+        println(elementList[position])
         val myDialogView =
-            LayoutInflater.from(this).inflate(R.layout.element_detail_dialog, null)
-        val mBuilder = AlertDialog.Builder(this).setView(myDialogView)
+            LayoutInflater.from(context).inflate(R.layout.element_detail_dialog, null)
+        val mBuilder = AlertDialog.Builder(context).setView(myDialogView)
+        val alert = mBuilder.create()
+        alert.show()
+
+        myDialogView.animation = AnimationUtils.loadAnimation(context, R.anim.from_bottom)
 
         myDialogView.findViewById<TextView>(R.id.elementName).text = element.name
+        myDialogView.findViewById<TextView>(R.id.elementNumber).text = element.number.toString()
+        myDialogView.findViewById<TextView>(R.id.elementShortName).text = element.shortName
+        val atomic = Random.nextDouble(1.0000, 250.9999)
+        val rounded = (atomic * 1000).roundToInt() / 1000.0
+        myDialogView.findViewById<TextView>(R.id.elementAtomicWeight).text =
+            getString(R.string.atomic_weight, rounded.toString())
+//        myDialogView.findViewById<Button>(R.id.btn).setOnClickListener {
+//
+//            onItemClicked(position+1,elementList[position+1])
+//            alert.dismiss()
+//        }
 
-        mBuilder.show()
+        alert.show()
     }
 
+
+
+    companion object {
+        @JvmStatic
+        fun newInstance() =
+            FirstFragment()
+    }
+
+    override fun onDestroyView() {
+        super.onDestroyView()
+        _binding = null
+    }
 }
