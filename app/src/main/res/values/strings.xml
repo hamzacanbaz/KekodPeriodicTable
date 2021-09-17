@@ -4,5 +4,6 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="elementImage">elementImage</string>
     <string name="atomic_weight">Atomic weight: %1$s </string>
+    <string name="atomicweightplaceholder">122</string>
 
 </resources>
