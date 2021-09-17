@@ -11,6 +11,9 @@
     </data>
 
     <FrameLayout
+        android:focusable="true"
+        android:clickable="true"
+        android:foreground="@drawable/ripple"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_margin="0.5dp"

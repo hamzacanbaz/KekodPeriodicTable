@@ -7,9 +7,9 @@ import android.os.Build
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
+import android.widget.Toast
 import android.view.ViewGroup
 import android.view.animation.AnimationUtils
-import android.widget.TextView
 import androidx.core.app.NotificationCompat
 import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat.getSystemService
@@ -18,6 +18,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.GridLayoutManager
 import com.canbazdev.kekodperiodictable.R
 import com.canbazdev.kekodperiodictable.adapter.ElementAdapter
+import com.canbazdev.kekodperiodictable.databinding.ElementDetailDialogBinding
 import com.canbazdev.kekodperiodictable.databinding.FragmentFirstBinding
 import com.canbazdev.kekodperiodictable.model.Element
 import com.canbazdev.kekodperiodictable.util.ElementTypes
@@ -82,6 +83,7 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         sendNotification()
+        Toast.makeText(context,"Notification Received...",Toast.LENGTH_LONG).show()
         val element1 = Element(
             shortName = "H",
             classification = ElementTypes.OtherNonMetals.ordinal,
@@ -216,380 +218,380 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
         val element37 = Element(isVisible = false)
         val element38 = Element(isVisible = false)
         val element39 = Element(isVisible = false)
-        val element40 = Element(shortName = "V", name = "Thorium", number = 23)
-        val element41 = Element(shortName = "Nb", name = "Thorium", number = 41)
-        val element42 = Element(shortName = "Ta", name = "Thorium", number = 73)
-        val element43 = Element(shortName = "Db", name = "Thorium", number = 105)
+        val element40 = Element(shortName = "V", name = "Vandium", number = 23)
+        val element41 = Element(shortName = "Nb", name = "Niobium", number = 41)
+        val element42 = Element(shortName = "Ta", name = "Tantalum", number = 73)
+        val element43 = Element(shortName = "Db", name = "Dubnium", number = 105)
         val element44 = Element(
             shortName = "Pr",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium",
+            name = "Praseodymium",
             number = 59
         )
         val element45 = Element(
             shortName = "Pa",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium",
+            name = "Protactinium",
             number = 91
         )
         val element46 = Element(isVisible = false)
         val element47 = Element(isVisible = false)
         val element48 = Element(isVisible = false)
-        val element49 = Element(shortName = "Cr", name = "Thorium", number = 24)
-        val element50 = Element(shortName = "Mo", name = "Thorium", number = 42)
-        val element51 = Element(shortName = "W", name = "Thorium", number = 74)
-        val element52 = Element(shortName = "Sg", name = "Thorium", number = 106)
+        val element49 = Element(shortName = "Cr", name = "Chromium", number = 24)
+        val element50 = Element(shortName = "Mo", name = "Molybdenum", number = 42)
+        val element51 = Element(shortName = "W", name = "Tungsten", number = 74)
+        val element52 = Element(shortName = "Sg", name = "Seaborgium", number = 106)
         val element53 = Element(
             shortName = "Nd",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium",
+            name = "Neodymium",
             number = 60
         )
         val element54 = Element(
             shortName = "U",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium",
+            name = "Uranium",
             number = 92
         )
         val element55 = Element(isVisible = false)
         val element56 = Element(isVisible = false)
         val element57 = Element(isVisible = false)
-        val element58 = Element(shortName = "Mn", name = "Thorium", number = 25)
-        val element59 = Element(shortName = "Tc", name = "Thorium", number = 43)
-        val element60 = Element(shortName = "Re", name = "Thorium", number = 75)
-        val element61 = Element(shortName = "Bh", name = "Thorium", number = 107)
+        val element58 = Element(shortName = "Mn", name = "Manganase", number = 25)
+        val element59 = Element(shortName = "Tc", name = "Technetium", number = 43)
+        val element60 = Element(shortName = "Re", name = "Rhenium", number = 75)
+        val element61 = Element(shortName = "Bh", name = "Bohrium", number = 107)
         val element62 = Element(
             shortName = "Pm",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium",
+            name = "Promethium",
             number = 61
         )
         val element63 = Element(
             shortName = "Np",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium",
+            name = "Neptunium",
             number = 93
         )
         val element64 = Element(isVisible = false)
         val element65 = Element(isVisible = false)
         val element66 = Element(isVisible = false)
-        val element67 = Element(shortName = "Fe", name = "Thorium", number = 26)
-        val element68 = Element(shortName = "Ru", name = "Thorium", number = 44)
-        val element69 = Element(shortName = "Os", name = "Thorium", number = 76)
-        val element70 = Element(shortName = "Hs", name = "Thorium", number = 108)
+        val element67 = Element(shortName = "Fe", name = "Iron", number = 26)
+        val element68 = Element(shortName = "Ru", name = "Ruthenium", number = 44)
+        val element69 = Element(shortName = "Os", name = "Osmium", number = 76)
+        val element70 = Element(shortName = "Hs", name = "Hassium", number = 108)
         val element71 = Element(
             shortName = "Sm",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium",
+            name = "Samarium",
             number = 62
         )
         val element72 = Element(
             shortName = "Pu",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium",
+            name = "Plutonium",
             number = 94
         )
         val element73 = Element(isVisible = false)
         val element74 = Element(isVisible = false)
         val element75 = Element(isVisible = false)
-        val element76 = Element(shortName = "Co", name = "Thorium", number = 27)
-        val element77 = Element(shortName = "Rh", name = "Thorium", number = 45)
-        val element78 = Element(shortName = "Ir", name = "Thorium", number = 77)
-        val element79 = Element(shortName = "Mt", name = "Thorium", number = 109)
+        val element76 = Element(shortName = "Co", name = "Cobalt", number = 27)
+        val element77 = Element(shortName = "Rh", name = "Rhodium", number = 45)
+        val element78 = Element(shortName = "Ir", name = "Iridium", number = 77)
+        val element79 = Element(shortName = "Mt", name = "Meitnerium", number = 109)
         val element80 = Element(
             shortName = "Eu",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium",
+            name = "Europium",
             number = 63
         )
         val element81 = Element(
             shortName = "Am",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium",
+            name = "Americium",
             number = 95
         )
         val element82 = Element(isVisible = false)
         val element83 = Element(isVisible = false)
         val element84 = Element(isVisible = false)
-        val element85 = Element(shortName = "Ni", name = "Thorium")
-        val element86 = Element(shortName = "Pd", name = "Thorium")
-        val element87 = Element(shortName = "Pt", name = "Thorium")
-        val element88 = Element(shortName = "Ds", name = "Thorium")
+        val element85 = Element(shortName = "Ni", name = "Nickel")
+        val element86 = Element(shortName = "Pd", name = "Paladium")
+        val element87 = Element(shortName = "Pt", name = "Platinum")
+        val element88 = Element(shortName = "Ds", name = "Darmstadtium")
         val element89 = Element(
             shortName = "Gd",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Gadolinium"
         )
         val element90 = Element(
             shortName = "Cm",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Curium"
         )
         val element91 = Element(isVisible = false)
         val element92 = Element(isVisible = false)
         val element93 = Element(isVisible = false)
-        val element94 = Element(shortName = "Cu", name = "Thorium")
-        val element95 = Element(shortName = "Ag", name = "Thorium")
-        val element96 = Element(shortName = "Au", name = "Thorium")
-        val element97 = Element(shortName = "Rg", name = "Thorium")
+        val element94 = Element(shortName = "Cu", name = "Copper")
+        val element95 = Element(shortName = "Ag", name = "Silver")
+        val element96 = Element(shortName = "Au", name = "Gold")
+        val element97 = Element(shortName = "Rg", name = "Roentgenium")
         val element98 = Element(
             shortName = "Tb",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Terbium"
         )
         val element99 = Element(
             shortName = "Bk",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Berkelium"
         )
         val element100 = Element(isVisible = false)
         val element101 = Element(isVisible = false)
         val element102 = Element(isVisible = false)
-        val element103 = Element(shortName = "Zn", name = "Thorium")
-        val element104 = Element(shortName = "Cd", name = "Thorium")
-        val element105 = Element(shortName = "Hg", name = "Thorium")
-        val element106 = Element(shortName = "Cn", name = "Thorium")
+        val element103 = Element(shortName = "Zn", name = "Zinc")
+        val element104 = Element(shortName = "Cd", name = "Cadmium")
+        val element105 = Element(shortName = "Hg", name = "Mercury")
+        val element106 = Element(shortName = "Cn", name = "Copernicium")
         val element107 = Element(
             shortName = "Dy",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Dyprosium"
         )
         val element108 = Element(
             shortName = "Cf",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Californium"
         )
         val element109 = Element(isVisible = false)
         val element110 = Element(
             shortName = "B",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Boron"
         )
         val element111 = Element(
             shortName = "Al",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Aluminum"
         )
         val element112 = Element(
             shortName = "Ga",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Gallium"
         )
         val element113 = Element(
             shortName = "In",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Indium"
         )
         val element114 = Element(
             shortName = "Tl",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Thallium"
         )
         val element115 = Element(
             shortName = "Nh",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Nihonium"
         )
         val element116 = Element(
             shortName = "Ho",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Holmium"
         )
         val element117 = Element(
             shortName = "Es",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Einsteinium"
         )
         val element118 = Element(isVisible = false)
         val element119 = Element(
             shortName = "C",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Carbon"
         )
         val element120 = Element(
             shortName = "Si",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Silicon"
         )
         val element121 = Element(
             shortName = "Ge",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Germanium"
         )
         val element122 = Element(
             shortName = "Sn",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Tin"
         )
         val element123 = Element(
             shortName = "Pb",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Lead"
         )
         val element124 = Element(
             shortName = "Fl",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Flerovium"
         )
         val element125 = Element(
             shortName = "Er",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Erbium"
         )
         val element126 = Element(
             shortName = "Fm",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Fermium"
         )
         val element127 = Element(isVisible = false)
         val element128 = Element(
             shortName = "N",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Nitrogen"
         )
         val element129 = Element(
             shortName = "P",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Phosphorous"
         )
         val element130 = Element(
             shortName = "As",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Arsenic"
         )
         val element131 = Element(
             shortName = "Sb",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Antimony"
         )
         val element132 = Element(
             shortName = "Bi",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Bismuth"
         )
         val element133 = Element(
             shortName = "Mc",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Moscovium"
         )
         val element134 = Element(
             shortName = "Tm",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Fermium"
         )
         val element135 = Element(
             shortName = "Md",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Mendelevium"
         )
         val element136 = Element(isVisible = false)
         val element137 = Element(
             shortName = "O",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Oxygen"
         )
         val element138 = Element(
             shortName = "S",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Sulfur"
         )
         val element139 = Element(
             shortName = "Se",
             classification = ElementTypes.OtherNonMetals.ordinal,
-            name = "Thorium"
+            name = "Selenium"
         )
         val element140 = Element(
             shortName = "Te",
             classification = ElementTypes.Metalloids.ordinal,
-            name = "Thorium"
+            name = "Tellerium"
         )
         val element141 = Element(
             shortName = "Po",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Polonium"
         )
         val element142 = Element(
             shortName = "Lv",
             classification = ElementTypes.OtherMetals.ordinal,
-            name = "Thorium"
+            name = "Livermorium"
         )
         val element143 = Element(
             shortName = "Yb",
             classification = ElementTypes.Lanthanides.ordinal,
-            name = "Thorium"
+            name = "Ytterbium"
         )
         val element144 = Element(
             shortName = "No",
             classification = ElementTypes.Actinides.ordinal,
-            name = "Thorium"
+            name = "Nobelium"
         )
         val element145 = Element(isVisible = false)
         val element146 = Element(
             shortName = "F",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Fluorine"
         )
         val element147 = Element(
             shortName = "Cl",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Chlorine"
         )
         val element148 = Element(
             shortName = "Br",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Bromine"
         )
         val element149 = Element(
             shortName = "I",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Iodine"
         )
         val element150 = Element(
             shortName = "At",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Astatine"
         )
         val element151 = Element(
             shortName = "Ts",
             classification = ElementTypes.Halogens.ordinal,
-            name = "Thorium"
+            name = "Tenessine"
         )
         val element152 = Element(isVisible = false)
         val element153 = Element(isVisible = false)
         val element154 = Element(
             shortName = "He",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Helium"
         )
         val element155 = Element(
             shortName = "Ne",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Neon"
         )
         val element156 = Element(
             shortName = "Ar",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Argon"
         )
         val element157 = Element(
             shortName = "Kr",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Krypton"
         )
         val element158 = Element(
             shortName = "Xe",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Xenon"
         )
         val element159 = Element(
             shortName = "Rn",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Radon"
         )
         val element160 = Element(
             shortName = "Og",
             classification = ElementTypes.NobleGases.ordinal,
-            name = "Thorium"
+            name = "Oganesson"
         )
         val element161 = Element(isVisible = false)
         val element162 = Element(isVisible = false)
@@ -774,32 +776,31 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
     }
 
     override fun onItemClicked(position: Int, element: Element) {
+
         println(position)
         println(elementList[position])
-        val myDialogView =
-            LayoutInflater.from(context).inflate(R.layout.element_detail_dialog, null)
-        val mBuilder = AlertDialog.Builder(context).setView(myDialogView)
+        val bind = DataBindingUtil.inflate<ElementDetailDialogBinding>(
+            LayoutInflater.from(context),
+            R.layout.element_detail_dialog,
+            null,
+            false
+        )
+
+//        val myDialogView =
+//            LayoutInflater.from(context).inflate(R.layout.element_detail_dialog, null)
+        val mBuilder = AlertDialog.Builder(context).setView(bind.root)
         val alert = mBuilder.create()
         alert.show()
 
-        myDialogView.animation = AnimationUtils.loadAnimation(context, R.anim.from_bottom)
+        bind.dialog.animation = AnimationUtils.loadAnimation(context, R.anim.from_bottom)
+        bind.elementDetail = element
 
-        myDialogView.findViewById<TextView>(R.id.elementName).text = element.name
-        myDialogView.findViewById<TextView>(R.id.elementNumber).text = element.number.toString()
-        myDialogView.findViewById<TextView>(R.id.elementShortName).text = element.shortName
         val atomic = Random.nextDouble(1.0000, 250.9999)
         val rounded = (atomic * 1000).roundToInt() / 1000.0
-        myDialogView.findViewById<TextView>(R.id.elementAtomicWeight).text =
-            getString(R.string.atomic_weight, rounded.toString())
-//        myDialogView.findViewById<Button>(R.id.btn).setOnClickListener {
-//
-//            onItemClicked(position+1,elementList[position+1])
-//            alert.dismiss()
-//        }
+        bind.elementAtomicWeight.text = getString(R.string.atomic_weight, rounded.toString())
 
         alert.show()
     }
-
 
 
     companion object {

@@ -1,68 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/dialog"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:orientation="vertical">
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <TextView
-        android:id="@+id/elementNumber"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp"
-        android:layout_marginStart="20dp"
-        android:layout_marginTop="15dp"
-        android:layout_weight="1"
-        android:gravity="center"
-        android:text="15"
-        android:textColor="#283593"
-        android:textSize="32sp" />
+    <data>
 
-    <TextView
-        android:id="@+id/elementShortName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:text="Pt"
-        android:textColor="#283593"
-        android:textSize="100sp" />
-
-    <TextView
-        android:id="@+id/elementName"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_margin="10dp"
-        android:gravity="center"
-        android:text="Platinum"
-        android:textColor="@color/black"
-        android:textSize="30sp" />
+        <variable
+            name="elementDetail"
+            type="com.canbazdev.kekodperiodictable.model.Element" />
+    </data>
 
     <LinearLayout
+        android:id="@+id/dialog"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="vertical">
 
         <TextView
-            android:id="@+id/elementAtomicWeight"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="3"
+            android:id="@+id/elementNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_weight="1"
             android:gravity="center"
-            android:text="Atomic weight: 196.256"
+            android:padding="10dp"
+            android:text="@{Integer.toString(elementDetail.number)}"
+            android:textColor="#283593"
+            android:textSize="32sp" />
+
+        <TextView
+            android:id="@+id/elementShortName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:text="@{elementDetail.shortName}"
+            android:textColor="#283593"
+            android:textSize="100sp" />
+
+        <TextView
+            android:id="@+id/elementName"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:text="@{elementDetail.name}"
             android:textColor="@color/black"
-            android:textSize="15sp" />
+            android:textSize="30sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/elementAtomicWeight"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="3"
+                android:gravity="center"
+                android:text="@string/atomicweightplaceholder"
+                android:textColor="@color/black"
+                android:textSize="15sp" />
+        </LinearLayout>
+
+        <ImageView
+
+            sourceImage="@{elementDetail.image}"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
+            android:contentDescription="@string/elementImage" />
+
+
     </LinearLayout>
-
-    <ImageView
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_gravity="center"
-        android:contentDescription="@string/elementImage"
-        android:src="@drawable/b" />
-
-
-</LinearLayout>
+</layout>

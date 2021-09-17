@@ -3,6 +3,8 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/drawable/bg_dialog.xml" value="0.2526041666666667" />
+        <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/drawable/ripple.xml" value="1.2035714285714285" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/activity_main.xml" value="0.176" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/activity_splash.xml" value="0.23645833333333333" />
         <entry key="..\:/Users/hmz/Desktop/Kotlin/KEKOD_/uygulamalar/KekodPeriodicTable/app/src/main/res/layout/card_slide.xml" value="0.15625" />
