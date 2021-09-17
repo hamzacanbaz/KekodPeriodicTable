@@ -1,6 +1,5 @@
 package com.canbazdev.kekodperiodictable.model
 
-import android.graphics.drawable.Drawable
 import com.canbazdev.kekodperiodictable.R
 
 data class Element(

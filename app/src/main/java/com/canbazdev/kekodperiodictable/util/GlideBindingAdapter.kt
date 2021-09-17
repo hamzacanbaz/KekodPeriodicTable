@@ -1,10 +1,10 @@
-package com.canbazdev.kekodperiodictable.adapter
+package com.canbazdev.kekodperiodictable.util
 
 import android.widget.ImageView
 import androidx.databinding.BindingAdapter
 import com.bumptech.glide.Glide
 
-object ImageBindingAdapter {
+object GlideBindingAdapter {
     @JvmStatic
     @BindingAdapter("sourceImage")
     fun <T> sourceImage(view: ImageView, profileImage: T) {

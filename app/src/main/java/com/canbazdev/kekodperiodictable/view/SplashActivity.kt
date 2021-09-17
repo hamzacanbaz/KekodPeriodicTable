@@ -23,7 +23,7 @@ class SplashActivity : AppCompatActivity() {
             override fun onFinish() {
                 val intent = Intent(this@SplashActivity, MainActivity::class.java)
                 startActivity(intent)
-//                overridePendingTransition(R.anim.alpha, R.anim.alpha)
+                overridePendingTransition(R.anim.alpha, R.anim.alpha)
                 finish()
 
             }

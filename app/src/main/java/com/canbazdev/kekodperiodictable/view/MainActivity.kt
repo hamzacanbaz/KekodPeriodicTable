@@ -21,7 +21,6 @@ class MainActivity : AppCompatActivity() {
         transaction.replace(binding.frameLayout.id,firstFragment)
         transaction.commit()
 
-
     }
 
 

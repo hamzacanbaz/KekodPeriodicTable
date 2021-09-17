@@ -765,20 +765,15 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
             )
 
         val elementAdapter = ElementAdapter(elementList, this)
-//        binding.recyclerview.scheduleLayoutAnimation()
 
         binding.recyclerview.layoutManager =
             GridLayoutManager(context, 9, GridLayoutManager.HORIZONTAL, false)
         binding.adapter = elementAdapter
-//        binding.recyclerview.layoutAnimation =
-//            AnimationUtils.loadLayoutAnimation(requireContext(), R.anim.grid_anim)
 
     }
 
     override fun onItemClicked(position: Int, element: Element) {
 
-        println(position)
-        println(elementList[position])
         val bind = DataBindingUtil.inflate<ElementDetailDialogBinding>(
             LayoutInflater.from(context),
             R.layout.element_detail_dialog,
@@ -786,8 +781,6 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
             false
         )
 
-//        val myDialogView =
-//            LayoutInflater.from(context).inflate(R.layout.element_detail_dialog, null)
         val mBuilder = AlertDialog.Builder(context).setView(bind.root)
         val alert = mBuilder.create()
         alert.show()
@@ -798,7 +791,6 @@ class FirstFragment : Fragment(), ElementAdapter.OnItemClickedListener {
         val atomic = Random.nextDouble(1.0000, 250.9999)
         val rounded = (atomic * 1000).roundToInt() / 1000.0
         bind.elementAtomicWeight.text = getString(R.string.atomic_weight, rounded.toString())
-
         alert.show()
     }
 
